@@ -3,13 +3,12 @@ import random
 
 
 hisobdagi_sum = randint(0, 120000000)
+total = hisobdagi_sum
+
 
 name_card = ["HUMO", "UZCARD", "VISA"]
 
-
 while True: 
-    
-    hisobdagi_sum = randint(0, 120000000)
     check_pin = randint(0,1)
     pin_code = int(input("Pin kiriting: "))
     choice_card = random.choice(name_card)
@@ -68,7 +67,7 @@ while True:
                                             print("Telefon raqam xato\nQaytadan kiriting...")
                                             False
                         elif tanlov2 == 2: 
-                                print(f"Balance: {hisobdagi_sum} so'm")
+                                print(f"Balance: {total} so'm")
                                 suroq = input("""Chiqish >>""")
                                 if suroq:
                                     exit() 
@@ -101,41 +100,47 @@ while True:
                                                     >> """))
                             
                                 el, yu, ikki, ike, be = 50000, 100000, 200000, 250000, 500000 
-                                if get_sum  ==  1 and  hisobdagi_sum >= el:
-                                    print(f"Sizdan {el} som pul yechib olindi \nSizda {hisobdagi_sum - el} som pul qoldi")
+                                if get_sum  ==  1 and  total >= el:
+                                    print(f"Sizdan {el} som pul yechib olindi \nSizda {total - el} som pul qoldi")
+                                    total = total - 50000
                                     backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
                                     if backe:
                                         break
-                                elif get_sum  ==  2 and  hisobdagi_sum >= yu:
-                                    print(f"Sizdan {yu} som pul yechib olindi \nSizda {hisobdagi_sum - yu} som pul qoldi")
+                                elif get_sum  ==  2 and  total >= yu:
+                                    print(f"Sizdan {yu} som pul yechib olindi \nSizda {total - yu} som pul qoldi")
                                     backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
+                                    total = total - 100000
                                     if backe:
                                         break
-                                elif get_sum  ==  3 and  hisobdagi_sum >= ikki:
-                                    print(f"Sizdan {ikki} som pul yechib olindi \nSizda {hisobdagi_sum - ikki} som pul qoldi")
+                                elif get_sum  ==  3 and  total >= ikki:
+                                    print(f"Sizdan {ikki} som pul yechib olindi \nSizda {total - ikki} som pul qoldi")
                                     backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
+                                    total = total - 200000
                                     if backe:
                                         break   
-                                elif get_sum  ==  4 and  hisobdagi_sum >= ike:
-                                    print(f"Sizdan {ike} som pul yechib olindi \nSizda {hisobdagi_sum - ike} som pul qoldi") 
+                                elif get_sum  ==  4 and  total >= ike:
+                                    print(f"Sizdan {ike} som pul yechib olindi \nSizda {total - ike} som pul qoldi") 
                                     backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
+                                    total = total - 250000
                                     if backe:
                                         break 
-                                elif get_sum  ==  5 and  hisobdagi_sum >= be:
-                                    print(f"Sizdan {be} som pul yechib olindi \nSizda {hisobdagi_sum - be} som pul qoldi")
+                                elif get_sum  ==  5 and  total >= be:
+                                    print(f"Sizdan {be} som pul yechib olindi \nSizda {total - be} som pul qoldi")
                                     backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
+                                    total = total - 500000
                                     if backe:
                                         break
                                 elif get_sum == 6:
                                     set_sum = int(input("Pul kiriting: "))
-                                    if hisobdagi_sum >=set_sum:
-                                        print(f"Sizdan {set_sum} som pul yechib olindi \nSizda {hisobdagi_sum - set_sum} som pul qoldi")
+                                    if total >=set_sum:
+                                        print(f"Sizdan {set_sum} som pul yechib olindi \nSizda {total - set_sum} som pul qoldi")
                                         backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
+                                        total = total - set_sum
                                         if backe:
                                             break
                                     
                                     else:
-                                        print(f"Siz {set_sum} yechib olishingiz uchun sizda pul yetarli emas \nHisobingizdagi: {hisobdagi_sum} som mavjud")
+                                        print(f"Siz {set_sum} yechib olishingiz uchun sizda pul yetarli emas \nHisobingizdagi: {total} som mavjud")
                                         backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
                                         if backe:
                                             break
@@ -153,9 +158,9 @@ while True:
                         elif tanlov2 == 6:
                             get_pul = int(input("Pul kiriting: "))
                             if get_pul > 0:
-                                print(f"Sizda {hisobdagi_sum} mavjud")
-                                hisobdagi_sum += get_pul
-                                print(f"Siz hisobingizga {get_pul} so'm pul kiritdingiz!\nHisobingizda {hisobdagi_sum} mavjud")
+                                print(f"Sizda {total} mavjud")
+                                total += get_pul
+                                print(f"Siz hisobingizga {get_pul} so'm pul kiritdingiz!\nHisobingizda {total} mavjud")
                                 backe = input("Ortga qaytish uchun istalgan tugmani bosing!\n🔙Ortga>> ")
                             if backe:
                                 break
